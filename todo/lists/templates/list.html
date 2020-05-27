@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block header_text %} Your todo list here... {% endblock %}
+{%block action_path%} additem/ {% endblock %}
+{% block table %}
+<table id="id_list_table">
+    {% for todo_item in todo_items %}
+    <tr><td> {{forloop.counter}}: {{todo_item.text}} </td></tr>
+    {% endfor %}
+</table>
+{% endblock %}
