@@ -131,5 +131,6 @@ dmypy.json
 
 #ignore venv
 /aws_todo_venv
+/admin
 *.idea
 .DS_Store
