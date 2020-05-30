@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="550e3dc5-08c9-49b1-8e15-28f8d773c820" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1cVa2J4begC8uAjHqq1efIEGVHd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/todo" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="550e3dc5-08c9-49b1-8e15-28f8d773c820" name="Default Changelist" comment="" />
+      <created>1590616005481</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590616005481</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/todo_with_tdd" />
+    </ignored-roots>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="352" y="184" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590779820089">
+      <screen x="0" y="23" width="1280" height="748" />
+    </state>
+    <state x="352" y="184" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1280.748@0.23.1280.748" timestamp="1590779820089" />
+    <state x="0" y="49" key="SettingsEditor" timestamp="1590768521497">
+      <screen x="0" y="23" width="1280" height="748" />
+    </state>
+    <state x="0" y="49" key="SettingsEditor/0.23.1280.748@0.23.1280.748" timestamp="1590768521497" />
+    <state x="335" y="206" width="690" height="525" key="find.popup" timestamp="1590855950981">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="335" y="206" width="690" height="525" key="find.popup/0.0.1280.800@0.0.1280.800" timestamp="1590855950981" />
+    <state x="335" y="216" width="598" height="490" key="find.popup/0.23.1280.748@0.23.1280.748" timestamp="1590773547279" />
+  </component>
+</project>
