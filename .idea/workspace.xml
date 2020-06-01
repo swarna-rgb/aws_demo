@@ -3,33 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="550e3dc5-08c9-49b1-8e15-28f8d773c820" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/functional_tests/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/functional_tests/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/functional_tests/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/functional_tests/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/lists/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/lists/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/lists/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/lists/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/lists/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/lists/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/lists/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/lists/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/lists/migrations/0002_todoitem_text.py" beforeDir="false" afterPath="$PROJECT_DIR$/lists/migrations/0002_todoitem_text.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/lists/migrations/0003_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/lists/migrations/0003_user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/lists/migrations/0004_todoitem_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/lists/migrations/0004_todoitem_user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/lists/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/lists/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/lists/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/lists/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/lists/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/lists/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/lists/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/lists/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/lists/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/lists/templates/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/lists/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/lists/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/lists/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lists/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/lists/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/lists/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/static/todo.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/static/todo.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/staticfiles/todo.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/todo.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/todo/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/todo/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/todo/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/todo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/todo/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo/wsgi.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +31,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
