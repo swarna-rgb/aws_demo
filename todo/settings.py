@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'todo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'tododb',
         'HOST':'tododatabase116.cyu7xjzejise.ap-south-1.rds.amazonaws.com',
         'PORT':'5432',
