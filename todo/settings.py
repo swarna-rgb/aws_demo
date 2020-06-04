@@ -89,7 +89,7 @@ DATABASES = {
         'HOST':'tododatabase116.cyu7xjzejise.ap-south-1.rds.amazonaws.com',
         'PORT':'5432',
         'USER':'todotodo',
-        'PASSWORD':'LgfqjeCmTE9y4zL2Z2x1'
+        'PASSWORD':'LgfqjeCmTE9y4zL2Z2x1',
     }
 }
 
