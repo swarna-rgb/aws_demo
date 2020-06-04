@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="550e3dc5-08c9-49b1-8e15-28f8d773c820" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lists/migrations/0005_auto_20200604_1638.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lists/templates/authsystem/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lists/templates/authsystem/logout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lists/templates/authsystem/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lists/templates/start.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/start_todo.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/lists/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/lists/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lists/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/lists/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -30,12 +41,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/todo" />
@@ -74,14 +89,18 @@
       <screen x="0" y="23" width="1280" height="748" />
     </state>
     <state x="346" y="151" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.748@0.23.1280.748" timestamp="1590859373236" />
-    <state x="0" y="49" key="SettingsEditor" timestamp="1590768521497">
+    <state x="0" y="49" width="1121" height="722" key="SettingsEditor" timestamp="1591288605972">
       <screen x="0" y="23" width="1280" height="748" />
     </state>
-    <state x="0" y="49" key="SettingsEditor/0.23.1280.748@0.23.1280.748" timestamp="1590768521497" />
+    <state x="0" y="49" width="1121" height="722" key="SettingsEditor/0.23.1280.748@0.23.1280.748" timestamp="1591288605972" />
     <state x="335" y="206" width="690" height="525" key="find.popup" timestamp="1590855950981">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="335" y="206" width="690" height="525" key="find.popup/0.0.1280.800@0.0.1280.800" timestamp="1590855950981" />
     <state x="335" y="216" width="598" height="490" key="find.popup/0.23.1280.748@0.23.1280.748" timestamp="1590773547279" />
+    <state x="330" y="95" width="670" height="676" key="search.everywhere.popup" timestamp="1591288616685">
+      <screen x="0" y="23" width="1280" height="748" />
+    </state>
+    <state x="330" y="95" width="670" height="676" key="search.everywhere.popup/0.23.1280.748@0.23.1280.748" timestamp="1591288616685" />
   </component>
 </project>
