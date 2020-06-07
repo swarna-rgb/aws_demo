@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="550e3dc5-08c9-49b1-8e15-28f8d773c820" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lists/migrations/0005_auto_20200604_1638.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lists/templates/authsystem/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lists/templates/authsystem/logout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lists/templates/authsystem/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lists/templates/start.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/start_todo.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lists/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lists/migrations/0006_profile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lists/templates/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/bio_pics/sr.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lists/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/lists/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lists/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/lists/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lists/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/lists/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lists/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lists/urls.py" afterDir="false" />

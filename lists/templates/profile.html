@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="post" enctype="multipart/form-data">
+
+    <div>
+   <img src="{{ user.profile.image.url }}" alt="bio pic" width="100" height="100">
+    </div>
+    {% csrf_token %}
+    {{ uu_form.as_p }}
+    {{ pu_form.as_p }}
+    <input type="submit" value="Update">
+</form>
+<a href="{% url 'home_page' %}">Return to home</a>
+</body>
+</html>

@@ -3,6 +3,8 @@ from django.http import  HttpResponse
 from .models import TodoItem,TodoUser
 from django.contrib.auth.models import User as AuthUser
 from django.contrib.auth.forms import UserCreationForm
+from .forms import UserRegisterForm,UserUpdateForm,ProfileUpdateForm
+from django.contrib.auth.decorators import login_required
 #add todo item to the existing user
 def add_items_for_an_existing_user(request,user_id):
     existing_user = TodoUser.objects.get(id=user_id)
@@ -20,11 +22,13 @@ def show_items_for_a_user(request,id):
     return render(request, 'list.html', {'todo_items': mytodoitems})
 
 #show all todo items for an user
+@login_required
 def show_all_todo_item(request):
     if request.method == 'POST':
         TodoItem.objects.create(text=request.POST['item_text'])
     return render(request, 'list.html', {'todo_items': TodoItem.objects.all()})
 
+@login_required
 def home_page(request):
     return render(request,'home.html')
 
@@ -33,13 +37,36 @@ def start_page(request):
 
 def register_users(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = UserRegisterForm(request.POST)
         if form.is_valid():
             print(form.cleaned_data.get('username'), "getting username")
             form.save()
             return redirect('login')
-
     else:
-        form = UserCreationForm()
+        form = UserRegisterForm()
     context = {'form': form}
     return render(request, 'authsystem/register.html',context)
+
+def profile(request):
+    if request.method == 'POST':
+        uu_form = UserUpdateForm(request.POST,instance=request.user)
+        pu_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+        # FRom Greg
+        if uu_form.is_valid() and pu_form.is_valid():
+            user = uu_form.save()
+
+            profile = pu_form.save(commit=False)
+            # # one-to-one relation with user. We dont apply this in the form field
+            profile.user = user
+            # # Without this, the image is not saved in the directory nor shown in the admin
+            if 'image' in request.FILES:
+                 profile.image = request.FILES['image']
+                 profile.save()
+         # Greg ends
+            return redirect('profile')
+    else:
+        uu_form = UserUpdateForm(instance=request.user)
+        pu_form = ProfileUpdateForm(instance=request.user.profile)
+    context = {'uu_form': uu_form,
+               'pu_form': pu_form}
+    return render(request, 'profile.html',context )

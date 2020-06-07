@@ -5,8 +5,13 @@
 <body>
 
 {% if user.is_authenticated %}
+    <div>
+        <small> Welcome {{ user.username }} </small>
+        <small> <a href="{% url 'profile' %}">profile</a></small>
+        <small> <a href="{% url 'logout' %}">logout</a> </small>
+    </div>
     <h1>{% block header_text %}{% endblock %}</h1>
-    <small> <a href="{% url 'logout' %}">logout</a> </small>
+
     {% block imageblock %} {% endblock %}
     <form method="POST" action="{%block action_path%} {% endblock %}">
     {% csrf_token %}
