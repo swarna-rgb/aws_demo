@@ -9,7 +9,7 @@ from .views import (home_page,
                    register_users,profile,
                     start_page)
 urlpatterns = [
-    path('start/', start_page, name = 'start_page'),
+    path('', start_page, name = 'start_page'),
     path('todo/', home_page, name = 'home_page'),
     path('todo/showall/', show_all_todo_item),
     path('todo/<int:id>/', show_items_for_a_user),

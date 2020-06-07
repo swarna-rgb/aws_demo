@@ -51,18 +51,10 @@ def profile(request):
     if request.method == 'POST':
         uu_form = UserUpdateForm(request.POST,instance=request.user)
         pu_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
-        # FRom Greg
-        if uu_form.is_valid() and pu_form.is_valid():
-            user = uu_form.save()
 
-            profile = pu_form.save(commit=False)
-            # # one-to-one relation with user. We dont apply this in the form field
-            profile.user = user
-            # # Without this, the image is not saved in the directory nor shown in the admin
-            if 'image' in request.FILES:
-                 profile.image = request.FILES['image']
-                 profile.save()
-         # Greg ends
+        if uu_form.is_valid() and pu_form.is_valid():
+            uu_form.save()
+            pu_form.save()
             return redirect('profile')
     else:
         uu_form = UserUpdateForm(instance=request.user)
