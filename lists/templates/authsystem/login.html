@@ -1,14 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-   <form method="POST">
+{% extends 'base.html' %}
+{% block noauthcontent2 %}
+<form method="POST">
        {% csrf_token %}
        {{ form.as_p }}
        <input type="submit" value="login">
+       <a href="{% url 'password_reset' %}">Forgot password</a>
    </form>
-</body>
-</html>
+{% endblock %}
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--   <form method="POST">-->
+<!--       {% csrf_token %}-->
+<!--       {{ form.as_p }}-->
+<!--       <input type="submit" value="login">-->
+<!--       <a href="{% url 'password_reset' %}">Forgot password</a>-->
+<!--   </form>-->
+<!--</body>-->
+<!--</html>-->

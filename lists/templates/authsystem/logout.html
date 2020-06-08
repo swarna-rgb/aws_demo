@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1> Thank you, you have been logged out</h1>
-    <a href="{% url 'start_page' %}"> Return Home</a>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block noauthcontent2 %}
+ <h1> Thank you, you have been logged out</h1>
+<a href="{% url 'start_page' %}"> Return Home</a>
+{% endblock %}
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1> Thank you, you have been logged out</h1>-->
+<!--    <a href="{% url 'start_page' %}"> Return Home</a>-->
+<!--</body>-->
+<!--</html>-->

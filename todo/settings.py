@@ -31,8 +31,8 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'lists.apps.ListsConfig',
-    #'lists',
+    # 'lists.apps.ListsConfig',
+    'lists',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -82,19 +82,24 @@ WSGI_APPLICATION = 'todo.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'tododb',
+#         'HOST':'tododatabase116.cyu7xjzejise.ap-south-1.rds.amazonaws.com',
+#         'PORT':'5432',
+#         'USER':'todotodo',
+#         'PASSWORD':'LgfqjeCmTE9y4zL2Z2x1',
+#     }
+# }
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tododb',
-        'HOST':'tododatabase116.cyu7xjzejise.ap-south-1.rds.amazonaws.com',
-        'PORT':'5432',
-        'USER':'todotodo',
-        'PASSWORD':'LgfqjeCmTE9y4zL2Z2x1',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
     }
 }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -147,3 +152,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 LOGIN_REDIRECT_URL = 'home_page'
 LOGIN_URL = 'login'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

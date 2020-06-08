@@ -3,7 +3,7 @@ from django.http import  HttpResponse
 from .models import TodoItem,TodoUser
 from django.contrib.auth.models import User as AuthUser
 from django.contrib.auth.forms import UserCreationForm
-from .forms import UserRegisterForm,UserUpdateForm,ProfileUpdateForm
+from .forms import UserRegisterForm,UserUpdateForm,ProfileForm
 from django.contrib.auth.decorators import login_required
 #add todo item to the existing user
 def add_items_for_an_existing_user(request,user_id):
@@ -35,6 +35,27 @@ def home_page(request):
 def start_page(request):
     return render(request, 'start.html')
 
+def register_users_with_picture(request):
+    if request.method == 'POST':
+        user_form = UserRegisterForm(request.POST)
+        profile_form = ProfileForm(request.POST)
+        if user_form.is_valid() and profile_form.is_valid():
+            print(user_form.cleaned_data.get('username'), "getting username")
+            user = user_form.save()
+            profile = profile_form.save(commit=False) # profile is not saved in db
+            profile.user = user
+            if 'image' in request.FILES:
+                profile.image = request.FILES['image']
+            profile.save()
+            return redirect('login')
+    else:
+        user_form = UserRegisterForm()
+        profile_form = ProfileForm()
+
+    context = {'user_form': user_form,
+               'profile_form':profile_form}
+    return render(request, 'authsystem/register.html',context)
+
 def register_users(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
@@ -50,7 +71,7 @@ def register_users(request):
 def profile(request):
     if request.method == 'POST':
         uu_form = UserUpdateForm(request.POST,instance=request.user)
-        pu_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+        pu_form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
 
         if uu_form.is_valid() and pu_form.is_valid():
             uu_form.save()
@@ -58,7 +79,7 @@ def profile(request):
             return redirect('profile')
     else:
         uu_form = UserUpdateForm(instance=request.user)
-        pu_form = ProfileUpdateForm(instance=request.user.profile)
+        pu_form = ProfileForm(instance=request.user.profile)
     context = {'uu_form': uu_form,
                'pu_form': pu_form}
     return render(request, 'profile.html',context )

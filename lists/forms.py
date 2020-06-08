@@ -8,13 +8,19 @@ class UserRegisterForm(UserCreationForm):
         model = AuthUser
         fields = ['username','email', 'password1','password2']
 
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['image']
+
 class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = AuthUser
         fields = ['username', 'email']
 
 
-class ProfileUpdateForm(forms.ModelForm):
-    class Meta:
-        model = Profile
-        fields = ['image']
+# class ProfileUpdateForm(forms.ModelForm):
+#     class Meta:
+#         model = Profile
+#         fields = ['image']

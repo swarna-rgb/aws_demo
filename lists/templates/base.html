@@ -3,26 +3,34 @@
 <title>To-Do</title>
 </head>
 <body>
-
 {% if user.is_authenticated %}
     <div>
         <small> Welcome {{ user.username }} </small>
+        <small> <a href="{% url 'password_change' %}">change password</a></small>
         <small> <a href="{% url 'profile' %}">profile</a></small>
         <small> <a href="{% url 'logout' %}">logout</a> </small>
     </div>
     <h1>{% block header_text %}{% endblock %}</h1>
 
     {% block imageblock %} {% endblock %}
+    {% block todoitem %}
     <form method="POST" action="{%block action_path%} {% endblock %}">
     {% csrf_token %}
     <input id="id_new_item" name='item_text' placeholder="Enter a todo item here">
     </form>
+    {% endblock %}
     {% block table %}
     {% endblock %}
 {% else %}
-   <h1> Please login to create your list</h1>
-   <p>Already have an account with us <a href="{% url 'login' %}">Login</a> </p>
+    {% block noauthcontent %}
+    {% endblock %}
+     {% block noauthcontent2 %}
+    <h1> Please login to create your list</h1>
+    <p>Already have an account with us <a href="{% url 'login' %}">Login</a> </p>
     <p> New user? <a href="{% url 'register' %}">Register here</a> </p>
+     {% endblock %}
+
 {% endif %}
+
 </body>
 </html>
