@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block header_text %}Start a new list here{% endblock %}
+{% block imageblock %} <img src="{% static 'todo.jpeg' %}" alt = "pic of todo" height="150"/> {% endblock %}
+{%block action_path%}/todo/newtodoitem/{% endblock %}
+

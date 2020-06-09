@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo</title>
+</head>
+<body>
+<h1>Our To-Do welcomes you !!</h1>
+<img src="{% static 'start_todo.jpeg'%}" alt="pic to start_todo">
+<p>Already have an account with us <a href="{% url 'login' %}">Login</a> </p>
+<p> New user ? <a href="{% url 'register' %}"> Register here</a> </p>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if user.profile.image %}
+     <img src="{{ user.profile.image.url }}" alt="Profile pic" >
+    {% endif %}
+   <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ uu_form.as_p }}
+        {{ pu_form.as_p }}
+        <input type="submit" value="Update">
+       <a href="{% url 'home_page' %}">Return home</a>
+    </form>
+</body>
+</html>
