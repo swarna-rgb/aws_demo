@@ -38,7 +38,7 @@ def start_page(request):
 def register_users_with_picture(request):
     if request.method == 'POST':
         user_form = UserRegisterForm(request.POST)
-        profile_form = ProfileForm(request.POST)
+        profile_form = ProfileForm(request.POST,request.FILES)
         if user_form.is_valid() and profile_form.is_valid():
             print(user_form.cleaned_data.get('username'), "getting username")
             user = user_form.save()
@@ -54,7 +54,7 @@ def register_users_with_picture(request):
 
     context = {'user_form': user_form,
                'profile_form':profile_form}
-    return render(request, 'authsystem/register.html',context)
+    return render(request, 'registration/register.html',context)
 
 def register_users(request):
     if request.method == 'POST':
@@ -66,7 +66,7 @@ def register_users(request):
     else:
         form = UserRegisterForm()
     context = {'form': form}
-    return render(request, 'authsystem/register.html',context)
+    return render(request, 'registration/register.html',context)
 
 def profile(request):
     if request.method == 'POST':
