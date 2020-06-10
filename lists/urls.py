@@ -1,9 +1,6 @@
 from django.urls import path
-
-from .views import home_page, show_all_todo_item,create_todo_item,show_items_for_a_user,add_items_for_an_existing_user
-urlpatterns = [
-
 from django.contrib.auth import views as auth_views
+from .views import home_page, show_all_todo_item,create_todo_item,show_items_for_a_user,add_items_for_an_existing_user
 from .views import (home_page,
                    show_all_todo_item,create_todo_item,
                     show_items_for_a_user,
