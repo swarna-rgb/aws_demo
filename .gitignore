@@ -133,3 +133,11 @@ dmypy.json
 /aws_todo_venv
 *.idea
 .DS_Store
+#key files
+*.crt
+*.key
+*.pem
+*.cnf
+*.srl
+*.ext
+*.csr
