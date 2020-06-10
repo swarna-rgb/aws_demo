@@ -8,7 +8,7 @@ from .views import (home_page,
                     start_page)
 from django.conf import settings
 from django.conf.urls.static import static
-from .forms import CustomEmailValidationForm
+#from .forms import CustomEmailValidationForm
 urlpatterns = [
     path('', start_page, name = 'start_page'),
     path('todo/', home_page, name = 'home_page'),
@@ -27,7 +27,7 @@ urlpatterns = [
 
       path('password_reset/',
     auth_views.PasswordResetView.as_view(
-        form_class=CustomEmailValidationForm,
+        #form_class=CustomEmailValidationForm,
          template_name='authsystem/password_reset.html',
          ),
          name='password_reset'),
@@ -50,7 +50,15 @@ urlpatterns = [
     path('password_reset/complete/',
          auth_views.PasswordResetCompleteView.
          as_view(template_name='authsystem/password_reset_complete.html'),
-         name='password_reset_complete')
+         name='password_reset_complete'),
+    path('change_password/',
+         auth_views.PasswordChangeView.
+         as_view(template_name='authsystem/password_change.html'),
+         name='password_change'),
+    path('change_password/done',
+         auth_views.PasswordChangeDoneView.
+         as_view(template_name='authsystem/password_change_done.html'),
+         name='password_change_done')
 
 
 ]

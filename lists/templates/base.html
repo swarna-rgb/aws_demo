@@ -7,8 +7,10 @@
 {% if user.is_authenticated %}
     <h1>{% block header_text %}{% endblock %}</h1>
     <div>
-        <small> <a href="{% url 'logout' %}">logout</a> </small>
-     <small> <a href="{% url 'profile' %}">profile</a> </small>
+          <small> <a href="{% url 'password_change' %}">change password</a> </small>
+          <small> <a href="{% url 'profile' %}">profile</a> </small>
+            <small> <a href="{% url 'logout' %}">logout</a> </small>
+
     </div>
     {% block imageblock %} {% endblock %}
     <form method="POST" action="{%block action_path%} {% endblock %}">
