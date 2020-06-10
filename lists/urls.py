@@ -1,4 +1,8 @@
 from django.urls import path
+
+from .views import home_page, show_all_todo_item,create_todo_item,show_items_for_a_user,add_items_for_an_existing_user
+urlpatterns = [
+
 from django.contrib.auth import views as auth_views
 from .views import (home_page,
                    show_all_todo_item,create_todo_item,
@@ -64,3 +68,4 @@ urlpatterns = [
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
