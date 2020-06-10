@@ -142,3 +142,5 @@ dmypy.json
 *.srl
 *.ext
 *.csr
+
+.idea/workspace.xml
