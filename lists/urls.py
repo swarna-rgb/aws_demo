@@ -8,6 +8,7 @@ from .views import (home_page,
                     start_page)
 from django.conf import settings
 from django.conf.urls.static import static
+from .forms import CustomEmailValidationForm
 urlpatterns = [
     path('', start_page, name = 'start_page'),
     path('todo/', home_page, name = 'home_page'),
@@ -22,7 +23,36 @@ urlpatterns = [
          name='login' ),
      path('logout/',
          auth_views.LogoutView.as_view(template_name='authsystem/logout.html'),
-         name='logout')
+         name='logout'),
+
+      path('password_reset/',
+    auth_views.PasswordResetView.as_view(
+        form_class=CustomEmailValidationForm,
+         template_name='authsystem/password_reset.html',
+         ),
+         name='password_reset'),
+        # path('password_reset/',
+        #  auth_views.PasswordResetView.as_view(template_name='authsystem/password_reset.html' ),
+        #  name='password_reset'),
+
+    # path('password_reset/',
+    #      #auth_views.PasswordResetView.as_view(template_name='authsystem/password_reset.html'),
+    #      custom_view,
+    #      name='password_reset'),
+    path('password_reset/done/',
+         auth_views.PasswordResetDoneView.as_view(template_name='authsystem/password_reset_done.html'),
+         name='password_reset_done'),
+
+    path('password_reset/confirm/<uidb64>/<token>/',
+         auth_views.PasswordResetConfirmView.
+         as_view(template_name='authsystem/password_reset_confirm.html'),
+         name='password_reset_confirm'),
+    path('password_reset/complete/',
+         auth_views.PasswordResetCompleteView.
+         as_view(template_name='authsystem/password_reset_complete.html'),
+         name='password_reset_complete')
+
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

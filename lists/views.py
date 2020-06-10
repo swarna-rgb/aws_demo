@@ -1,9 +1,12 @@
+from django.contrib.auth.views import PasswordResetView
 from django.shortcuts import render,redirect
 from django.http import  HttpResponse
 from .models import TodoItem,TodoUser
 from django.contrib.auth.models import User as AuthUser
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm,PasswordResetForm
+from django.contrib import messages
 from .forms import UserRegisterForm,UserUpdateForm,ProfileForm
+    #CustomEmailValidationForm
 #add todo item to the existing user
 def add_items_for_an_existing_user(request,user_id):
     existing_user = TodoUser.objects.get(id=user_id)
@@ -83,3 +86,26 @@ def profile(request):
     context = {'uu_form': uu_form,
                'pu_form': pu_form}
     return render(request, 'profile.html', context)
+
+
+def custom_reset_view(request):
+        print('custom_reset_view')
+        if request.method =='POST':
+            print('POST')
+            pr_from = PasswordResetForm(request.POST)
+            if pr_from.is_valid():
+                print(pr_from.cleaned_data)
+                uemail = pr_from.cleaned_data.get('email')
+                if not AuthUser.objects.filter(email=uemail).exists():
+                    #user with valid email and active
+                    messages.error(request,
+                    f'Your email { uemail } is invalid, '
+                                            f'Please enter your registered email id ')
+
+            else:
+                messages.error(request, pr_from.errors)
+        else:
+            pr_from = PasswordResetForm()
+
+        context = {'form':pr_from}
+        return render(request, 'authsystem/password_reset.html', context)
