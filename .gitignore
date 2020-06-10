@@ -133,3 +133,11 @@ dmypy.json
 /aws_todo_venv
 *.idea
 .DS_Store
+*.crt
+*.key
+*.pem
+*.csr*
+*.srl
+*.ext
+
+/staticfiles/django_extensions/
