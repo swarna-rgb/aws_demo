@@ -27,9 +27,10 @@ urlpatterns = [
 
       path('password_reset/',
     auth_views.PasswordResetView.as_view(
-        form_class=CustomEmailValidationForm,
+        #form_class=CustomEmailValidationForm,
          template_name='authsystem/password_reset.html',
          ),
+        {'form_class':CustomEmailValidationForm},
          name='password_reset'),
         # path('password_reset/',
         #  auth_views.PasswordResetView.as_view(template_name='authsystem/password_reset.html' ),
@@ -41,6 +42,7 @@ urlpatterns = [
     #      name='password_reset'),
     path('password_reset/done/',
          auth_views.PasswordResetDoneView.as_view(template_name='authsystem/password_reset_done.html'),
+
          name='password_reset_done'),
 
     path('password_reset/confirm/<uidb64>/<token>/',
