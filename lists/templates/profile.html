@@ -7,6 +7,7 @@
 <body>
     {% if user.profile.image %}
      <img src="{{ user.profile.image.url }}" alt="Profile pic" >
+    {% else %} <br>
     {% endif %}
    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
