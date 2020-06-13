@@ -1,7 +1,7 @@
 
 from django.shortcuts import render,redirect
 from django.http import  HttpResponse
-from .models import TodoItem,User
+from .models import TodoItem
 from django.contrib.auth.views import PasswordResetView
 from django.shortcuts import render,redirect
 from django.http import  HttpResponse
@@ -23,8 +23,6 @@ def create_todo_item(request):
     return redirect(f'/todo/{new_user.id}/')
 
 def show_items_for_a_user(request,id):
-    user = User.objects.get(id=id)
-
     user = TodoUser.objects.get(id=id)
     mytodoitems = TodoItem.objects.filter(user=user)
     return render(request, 'list.html', {'todo_items': mytodoitems})

@@ -11,29 +11,31 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import environ
+
+environ.Env.read_env()
+env = environ.Env(DEBUG=(bool, False),)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'yrl-67+1k0#jc(7-)=x0j^49c=*xdkaoqbux68=sq-^o$=5opu'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG =env('LDEBUG')
 
-ALLOWED_HOSTS = ['*']
-
-
+#ALLOWED_HOSTS=['todo.com']
+ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(',')
+#print(ALLOWED_HOSTS)
+# ALLOWED_HOSTS = [x.split(',') for x in env('ALLOWED_HOSTS')]
 # Application definition
 
 INSTALLED_APPS = [
-
-    #'lists.apps.ListsConfig',
-
     'lists',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -82,37 +84,9 @@ WSGI_APPLICATION = 'todo.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tododb',
-        'HOST':'tododatabase116.cyu7xjzejise.ap-south-1.rds.amazonaws.com',
-        'PORT':'5432',
-        'USER':'todotodo',
-        'PASSWORD':'LgfqjeCmTE9y4zL2Z2x1',
-    }
+    'default': env.db('SQLITE_URL')
 }
-
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'tododb',
-#         'HOST':'tododatabase116.cyu7xjzejise.ap-south-1.rds.amazonaws.com',
-#         'PORT':'5432',
-#         'USER':'todotodo',
-#         'PASSWORD':'LgfqjeCmTE9y4zL2Z2x1',
-#     }
-# }
-
 
 
 
@@ -171,29 +145,30 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = env('STATIC_URL')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
 
-MEDIA_URL = '/media/'
+MEDIA_URL = env('MEDIA_URL')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGIN_REDIRECT_URL = 'home_page'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT= 587
-# EMAIL_USE_TLS = True
+EMAIL_HOST =env('EMAIL_HOST')
+EMAIL_PORT= env.int('EMAIL_PORT')
+EMAIL_USE_TLS = env.bool('EMAIL_USE_TLS')
 
-EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
+EMAIL_HOST_USER = env('EMAIL_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_PASSWORD')
 
 #django-ext
-RUNSERVERPLUS_SERVER_ADDRESS_PORT = 'todo.com:8000'
+RUNSERVERPLUS_SERVER_ADDRESS_PORT = env('RUNSERVERPLUS_SERVER_ADDRESS_PORT')
 #social auth
 SOCIAL_AUTH_POSTGRES_JSONFIELD = True
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ.get('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ.get('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = env('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = env('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
+
